@@ -9,7 +9,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{9AA759E6-1
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "samples", "samples", "{34B05065-E8F4-4C5E-8BFB-204FA04453E8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroNetCore.AspNetCore.Proxy", "src\MicroNetCore.AspNetCore.Proxy\MicroNetCore.AspNetCore.Proxy.csproj", "{D9AAC411-3EC5-432B-A57D-96358240150B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MicroNetCore.AspNetCore.Proxy", "src\MicroNetCore.AspNetCore.Proxy\MicroNetCore.AspNetCore.Proxy.csproj", "{D9AAC411-3EC5-432B-A57D-96358240150B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroNetCore.AspNetCore.Proxy.Sample", "samples\MicroNetCore.AspNetCore.Proxy.Sample\MicroNetCore.AspNetCore.Proxy.Sample.csproj", "{A576E8CD-4A28-491D-B9F2-C9AEEF5DE390}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,12 +23,17 @@ Global
 		{D9AAC411-3EC5-432B-A57D-96358240150B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D9AAC411-3EC5-432B-A57D-96358240150B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D9AAC411-3EC5-432B-A57D-96358240150B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A576E8CD-4A28-491D-B9F2-C9AEEF5DE390}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A576E8CD-4A28-491D-B9F2-C9AEEF5DE390}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A576E8CD-4A28-491D-B9F2-C9AEEF5DE390}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A576E8CD-4A28-491D-B9F2-C9AEEF5DE390}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{D9AAC411-3EC5-432B-A57D-96358240150B} = {9306EC9E-BDA1-48D5-880E-CFFC72FBE3B1}
+		{A576E8CD-4A28-491D-B9F2-C9AEEF5DE390} = {34B05065-E8F4-4C5E-8BFB-204FA04453E8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {36D9BC06-7626-4671-9D27-0ADC66A7E89F}
