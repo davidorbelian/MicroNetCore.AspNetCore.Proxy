@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
@@ -18,6 +19,12 @@ namespace MicroNetCore.AspNetCore.Proxy.Middleware
         private readonly ILogger _logger;
         private readonly RequestDelegate _next;
         private readonly IProxy _proxy;
+
+        private static readonly IEnumerable<string> IgnoreHeaders = new[]
+        {
+            HttpRequestHeader.Authorization.ToString(),
+            HttpRequestHeader.Host.ToString()
+        };
 
         /// <summary>
         ///     Initializes a new instance of the
@@ -70,7 +77,7 @@ namespace MicroNetCore.AspNetCore.Proxy.Middleware
         {
             foreach (var header in original.Headers)
             {
-                if (header.Key == HttpRequestHeader.Authorization.ToString())
+                if (IgnoreHeaders.Contains(header.Key))
                     continue;
 
                 if (!copy.Headers.TryAddWithoutValidation(header.Key, header.Value.ToArray()))
