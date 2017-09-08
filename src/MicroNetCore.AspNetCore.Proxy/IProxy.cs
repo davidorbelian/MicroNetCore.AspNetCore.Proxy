@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace MicroNetCore.AspNetCore.Proxy
+﻿namespace MicroNetCore.AspNetCore.Proxy
 {
     /// <summary>
     ///     Maps request URI to target URI.
@@ -10,8 +8,8 @@ namespace MicroNetCore.AspNetCore.Proxy
         /// <summary>
         ///     Maps request URI to target URI.
         /// </summary>
-        /// <param name="uri">Request <see cref="T:System.Runtime.Serialization.Uri" />.</param>
-        /// <returns>Target <see cref="T:System.Runtime.Serialization.Uri" />.</returns>
-        Uri Map(Uri uri);
+        /// <param name="requestPath">Request path.</param>
+        /// <returns>Target URI string.</returns>
+        string Map(string requestPath);
     }
 }

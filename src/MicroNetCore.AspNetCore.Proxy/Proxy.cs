@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace MicroNetCore.AspNetCore.Proxy
 {
@@ -25,18 +26,22 @@ namespace MicroNetCore.AspNetCore.Proxy
         /// <summary>
         ///     Maps request URI to target URI.
         /// </summary>
-        /// <param name="uri">Request <see cref="T:System.Runtime.Serialization.Uri" />.</param>
-        /// <returns>Target <see cref="T:System.Runtime.Serialization.Uri" />.</returns>
-        public Uri Map(Uri uri)
+        /// <param name="requestPath">Request path.</param>
+        /// <returns>Target URI string.</returns>
+        public string Map(string requestPath)
         {
-            var path = uri.AbsolutePath.ToLower();
-            var pathAndQuery = uri.PathAndQuery.ToLower();
+            // Remove first '/'
+            requestPath = requestPath.Remove(0, 1);
+
+            var path = requestPath.Split('?').First();
 
             foreach (var key in _proxyOptions.Keys)
             {
                 if (!Match(path, key)) continue;
 
-                return new Uri(pathAndQuery.Replace(key.ToLower(), _proxyOptions[key].ToLower()));
+                var replaced = requestPath.Replace(key.ToLower(), _proxyOptions[key].ToLower());
+
+                return replaced;
             }
 
             throw new KeyNotFoundException();

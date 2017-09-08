@@ -57,7 +57,7 @@ namespace MicroNetCore.AspNetCore.Proxy.Middleware
             var message = new HttpRequestMessage
             {
                 Method = new HttpMethod(request.Method),
-                RequestUri = _proxy.Map(new Uri(request.Path))
+                RequestUri = new Uri(_proxy.Map(request.Path))
             };
 
             CopyRequestHeaders(request, message);
